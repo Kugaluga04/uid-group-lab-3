@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>User Info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="index.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            font-weight: 700;
+        }
+
+        input[type=radio] {
+            margin-top: 20px;
+            margin-left: 220px;
+            cursor: pointer;
+        }
+
+        input[type=radio]:disabled {
+            pointer-events: none;
+        }
+
+        input[type=text]:read-only {
+            pointer-events: none;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        .buttonSel {
+            background-color: #E87023;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+            width: 25%;
+            margin-left: 935px;
+        }
+
+        .buttonSel:hover {
+            background-color: #E77023;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .col-50 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        #phoneContact .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .col-50 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        #menu2 .col-75 {
+            width: 50%;
+        }
+
+        #menu2 input[type=radio] {
+            margin-left: 140px;
+            ;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .container .nav-link {
+            color: black;
+            font-weight: bold;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            color: #fff;
+            background-color: #e88023;
+        }
+
+        .navbar-light .navbar-nav .nav-link.active,
+        .navbar-light .navbar-nav .show>.nav-link {
+            color: white;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: white;
+            font-weight: bold;
+        }
+
+
+        @media screen and (max-width: 600px) {
+
+            .col-25,
+            .col-75,
+            input[type=text] {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            #menu2 .col-75 {
+                width: 85%;
+                margin-top: 0;
+            }
+
+            .buttonSel {
+                width: 50%;
+                margin-top: 0;
+                margin-left: 140px;
+                float: left;
+            }
+
+            .col-50 {
+                width: 50%;
+                margin-top: 0;
+                margin-right: 270px;
+                float: left;
+            }
+
+            input[type=radio] {
+                margin-top: 0px;
+                margin-left: 50px;
+            }
+
+            #menu2 input[type=radio] {
+                margin-top: 0px;
+                margin-left: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="pmlogo.png" alt="" style="width: 200px; height: 30px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="#">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <br>
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="pill" href="#home">USER INFO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#menu1">MAIL ADDRESS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#menu2">PHONE AND EMAIL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#menu3">SECURITY</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="container tab-pane active"><br>
+
+                <form>
+                    <div class="row">
+                        <div class="col-25">
+                            <h5 style="font-weight: bold;">Prime Service Account No: </h5>
+                        </div>
+                        <div class="col-75" style="width: 25%;">
+                            <input type="text" name="firstname" placeholder="NJ2345" readonly style="border:none">
+                        </div>
+                    </div>
+
+                    <h5 style="font-weight: bold;">Personal Info</h5>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">First Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstname" placeholder="John" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="mname">Middle Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="middlename" placeholder="Samuel" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Last Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="lastname" placeholder="Doe" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="gen">Gender</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="gender" placeholder="Male" >
+                        </div>
+                    </div>
+                    <br>
+                    <h5 style="font-weight: bold;">User Credential Info</h5>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fJoin">First Joined</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstjoined" placeholder="2021-01-01 20:30:52" readonly style="border:none">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="lAct">Last Active</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="lastactive" placeholder="2021-12-31" readonly style="border:none">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="loginDate">Last Login Date</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="lastactive" placeholder="2021-12-31" readonly style="border:none">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="lpw">Last Password Change Date</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="lastpwchange" placeholder="2021-09-30" readonly style="border:none">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="llod">Last Lock Out Date</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="lastlockout" placeholder="2021-10-20" readonly style="border:none">
+                        </div>
+                      </div>
+                    <br>
+                    <div class="row">
+                        <a class="buttonSel btn btn-primary" href="form.html" role="button">Save Info</a>
+                    </div>
+                </form>
+            </div>
+            <div id="menu1" class="container tab-pane fade"><br>
+                <h5 style="font-weight: bold;">Address Listing 1</h5>
+                <form>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add1">Address 1</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstaddress1" placeholder="RedRock" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add2">Address 2</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstaddress2" placeholder="San Noches" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add3">Address 3</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstaddress3" placeholder="G.I" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add4">Address 4</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstaddress4" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="city">City</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstcity" placeholder="New Jersey" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="pcode">Postal Code</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstpostal" placeholder="33205" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="count">Country</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstCountry" placeholder="United States of America" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="priAdd">Primary Address</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="radio" name="addressType" value="1" checked >
+                        </div>
+                    </div>
+
+
+                    <h5 style="font-weight: bold;">Address 2</h5>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add1">Address 1</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="secaddress" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add2">Address 2</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="secaddress2" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add3">Address 3</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="secaddress3" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add4">Address 4</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="secaddress4" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="city">City</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="seccity" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="pcode">Postal Code</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="secpostal" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="Country">Country</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="secCountry" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="priAdd">Primary Address</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="radio" name="addressType" value="2" >
+                        </div>
+                    </div>
+
+                    <h5 style="font-weight: bold;">Address 3</h5>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add1">Address 1</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="thirdaddress" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add2">Address 2</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="thirdaddress2" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add3">Address 3</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="thirdaddress3" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="add4">Address 4</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="thirdaddress4" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="city">City</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="thirdcity" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="pcode">Postal Code</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="thirdpostal" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="Country">Country</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="thirdCountry" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="priAdd">Primary Address</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="radio" name="addressType" value="2" >
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <a class="buttonSel btn btn-primary" href="form.html" role="button">Save Info</a>
+                    </div>
+                </form>
+            </div>
+
+            <div id="menu2" class="container tab-pane fade"><br>
+                <h5 style="font-weight: bold;">Phone Numbers</h5>
+                <form>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone1">Phone Number 1</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="text" name="firstNo" placeholder="(387) 123-4567" >
+                        </div>
+                        <div id="phoneContact" class="col-50">
+                            <select id="security" name="security1" >
+                                <option value="mobile">Mobile </option>
+                                <option value="home">Home</option>
+                                <option value="business">Business</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="priPhone">Primary Phone Number</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="radio" name="phoneType" value="1" checked >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone2">Phone Number 2</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="text" name="firstNo" placeholder="N/A" >
+                        </div>
+                        <div id="phoneContact" class="col-50">
+                            <select id="security" name="security1" >
+                                <option value="none">None</option>
+                                <option value="mobile">Mobile </option>
+                                <option value="home">Home</option>
+                                <option value="business">Business</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="priPhone">Primary Phone Number</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="radio" name="phoneType" value="1" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone3">Address 3</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="text" name="firstNo" placeholder="N/A" >
+                        </div>
+                        <div id="phoneContact" class="col-50">
+                            <select id="security" name="security1" >
+                                <option value="none">None</option>
+                                <option value="mobile">Mobile </option>
+                                <option value="home">Home</option>
+                                <option value="business">Business</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="priPhone">Primary Phone Number</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="radio" name="phoneType" value="1" >
+                        </div>
+                    </div>
+
+                    <br>
+                    <h5 style="font-weight: bold;">Email Addresses</h5>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="email1">Email Address 1</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="text" name="secaddress" placeholder="example@yahoo.com" >
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="email2">Primary Email Address</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="radio" name="addressType" value="2" checked >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="email2">Email Address 2</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="secaddress2" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Primary Email Address</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="radio" name="addressType" value="2" >
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Email Address 3</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="secaddress3" placeholder="N/A" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Primary Email Address</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="radio" name="addressType" value="2" >
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <a class="buttonSel btn btn-primary" href="form.html" role="button">Save Info</a>
+                    </div>
+                </form>
+            </div>
+            <div id="menu3" class="container tab-pane fade"><br>
+                <h5 style="font-weight: bold;">Password</h5>
+                <form>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone2">Password: </label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="text" name="firstNo" placeholder="*************" readonly style="border:none">
+                        </div>
+                    </div>
+<div class="row">
+                        <div class="col-25">
+                            <label for="pExp">Password Expiration</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="pwexp" placeholder="2022-01-29" readonly style="border:none">
+                        </div>
+                    </div>   
+                    <br>
+                    <h5 style="font-weight: bold;">Change Password</h5>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Old Password</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="firstname" placeholder="*************" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="mname">New Password</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="middlename" placeholder="*************" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Confirm Password</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="lastname" placeholder="****************" >
+                        </div>
+                    </div>
+                    
+                    <br><br>
+                    <h5 style="font-weight: bold;">Security Questions</h5>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone1">Security Question Number 1</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <select id="security" name="security1" >
+                                <option value="dog">What was the name of your first Pet?</option>
+                                <option value="teacher">What was the name of your second grade teacher?</option>
+                                <option value="middleIn">What is your middle name? </option>
+                                <option value="maiden">What is your mother's maiden name</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone2">Answer to Security Question 1</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="text" name="firstNo" placeholder="Ralph Rednose" >
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone1">Security Question Number 2</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <select id="security" name="security1" >
+                                <option value="middleIn">What is your middle name? </option>
+                                <option value="dog">What was the name of your first Pet?</option>
+                                <option value="teacher">What was the name of your second grade teacher?</option>
+                                <option value="maiden">What is your mother's maiden name</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone2">Answer to Security Question 2</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="text" name="firstNo" placeholder="Ella Mae" >
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone1">Security Question Number 3</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <select id="security" name="security1" >
+                                <option value="maiden">What is your mother's maiden name</option>
+                                <option value="middleIn">What is your middle name? </option>
+                                <option value="dog">What was the name of your first Pet?</option>
+                                <option value="teacher">What was the name of your second grade teacher?</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="phone2">Answer to Security Question 3</label>
+                        </div>
+                        <div id="phoneContact" class="col-75">
+                            <input type="text" name="firstNo" placeholder="Greenidge" >
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <a class="buttonSel btn btn-primary" href="form.html" role="button">Save Info</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-center text-white">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-white" href="#">PRIME SERVICE</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
